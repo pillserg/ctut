@@ -1,0 +1,44 @@
+desc: (none)
+cmd: ./bin/ex
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=104753
+mem_heap_B=1024
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=117673
+mem_heap_B=1024
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=peak
+n1: 1024 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4E9E183: _IO_file_doallocate (filedoalloc.c:127)
+  n1: 1024 0x4EAC4C2: _IO_doallocbuf (genops.c:398)
+   n1: 1024 0x4EAB826: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:820)
+    n1: 1024 0x4EAA1BB: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1331)
+     n1: 1024 0x4E7E1FF: vfprintf (vfprintf.c:1320)
+      n1: 1024 0x4E86847: printf (printf.c:33)
+       n1: 1024 0x40058A: Person_print (ex_extra.c:26)
+        n0: 1024 0x40060E: main (ex_extra.c:43)
+#-----------
+snapshot=3
+#-----------
+time=117673
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
