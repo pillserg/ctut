@@ -34,6 +34,17 @@ void Person_print(Person who) {
     printf("\tWeight: %d\n", who.weight);
 }
 
+typedef struct {
+    float lon;
+    float lat;
+} Coords;
+
+typedef struct {
+    Coords coords;
+    char *label;
+} CoordLabel;
+
+
 int main(int argc, char *argv[]) {
     // make two people structures
     Person joe = Person_create(
@@ -59,6 +70,20 @@ int main(int argc, char *argv[]) {
     frank.age += 20;
     frank.weight += 20;
     Person_print(frank);
+    
+    Coords coords;
+    coords.lat = 67;
+    coords.lon = 88;
+
+    printf("We have coords, capitan: %f:%f\n", coords.lat, coords.lon);
+    
+    CoordLabel c_label;
+    c_label.coords = coords;
+    c_label.label = "Tortuga";
+
+    printf("Capitan, seems like it's coordinates of: %s\n", c_label.label);
+
+
 
     return 0;
 }
