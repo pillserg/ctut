@@ -134,7 +134,7 @@ void Database_set(Connection *conn, int id, const char *name, const char *email)
     if (addr->set) die(conn, "Already set, delete it first");
     // mark addr as set, C11 True, False should look nicer...
     addr->set = 1;
-
+    addr->id = id;
     // WARNING: bug, read "how to break it" and fix it
     // ... with very long name it could fail (name wouldn't be terminated with \0
     // ... but other than this, can't see it yet
